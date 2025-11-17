@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../xampp/htdocs/myPhp"
+		},
+		{
+			"path": "D:/php"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "contigo_project"
+	}
+}

@@ -1,0 +1,533 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="EL KHYARI Ilyas">
+    <link rel="icon" href="{% static 'roue.png' %}" type="image/x-icon">
+    <title>Présentation - Rotaract</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Pour les icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> <!-- Importation de la police Poppins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script> <!-- CountUp.js pour l'animation des chiffres -->
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        /* Menu Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            position: relative;
+        }
+        .logo {
+            height: 50px;
+        }
+        .menu {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            position: relative;
+            margin: 0 10px; /* Réduit l'espace entre les éléments du menu */
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0,9em;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .menu li:hover > a {
+            position: relative;
+            color: #c41492; /* Change la couleur du texte */
+        }
+        
+        .menu li:hover > a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -3px; /* Ajuste la position verticale */
+            height: 2px;
+            background-color: #c41492; /* Couleur de surlignement */
+            transform: scaleX(1);
+            transition: transform 0.3s ease;
+            transform-origin: bottom;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            min-width: 150px;
+        }
+
+        .submenu li {
+            padding: 5px 20px;
+        }
+
+        .submenu a {
+            color: #333;
+        }
+
+        .submenu a:hover {
+            color: #007BFF;
+        }
+
+        .menu li:hover .submenu {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 400px; /* Ajustez la hauteur si nécessaire */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Pour cacher les images qui débordent */
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover; /* Assurez-vous que l'image couvre toute la section */
+            background-position: center; /* Centre l'image */
+            opacity: 0; /* Rend l'image invisible au départ */
+            transition: opacity 1s ease; /* Transition douce pour l'opacité */
+        }
+        .hero-image.active {
+            opacity: 1; /* L'image active est visible */
+        }
+        .hero-text {
+            position: relative;
+            font-size: 2.5em;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        /* Main Section */
+        main {
+            display: flex;
+            align-items: flex-start; /* Aligner les éléments en haut */
+            padding: 20px;
+            justify-content: space-between; /* Espacer entre le logo + titre et le texte */
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center; /* Aligner le logo et le titre verticalement */
+            justify-content: center; /* Centrer horizontalement */
+            flex-direction: column; /* Disposer le logo et le titre en colonne */
+            text-align: center; /* Centrer le texte */
+        }
+
+        .logo1 {
+            width: 100px; /* Ajustez la taille du logo */
+            height: auto; /* Maintient les proportions du logo */
+            margin-bottom: 10px; /* Espace entre le logo et le titre */
+        }
+
+        .main-content {
+            max-width: 50%; /* Contrôle la largeur du texte */
+        }
+
+        main h2 {
+            font-size: 2em;
+            margin: 0;
+            text-align: center; /* Centrer le texte du titre */
+        }
+
+        .presentation {
+            text-align: center;
+            margin: 40px auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #ffffff 50%, #f0f0f5);
+            border-radius: 12px;
+            border: 1px solid #dedede;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            font-family: 'Georgia', serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Ligne de décoration */
+        .presentation::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background-color: #FF007B;
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+        
+        /* Style du titre */
+        .presentation h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            color: #FF007B;
+        }
+        
+        /* Style du paragraphe */
+        .presentation p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #666;
+            max-width: 85%;
+            margin: 0 auto;
+            text-align: justify;
+            letter-spacing: 0.5px;
+            box-shadow: 200px;
+        }
+        
+        /* Animation subtile de fade-in */
+        .presentation {
+            animation: fadeInUp 1s ease-in-out both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        
+
+        /* Rotaract dans le monde */
+        .rotaract-world {
+            text-align: center;
+            margin: 50px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .rotaract-world h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 30px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat h1 {
+            font-size: 3em;
+            color: #FF007B;
+            margin: 0;
+        }
+        .stat p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px; /* Espace entre l'image et les statistiques */
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .statistics {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 60px; /* Espacement entre les stats */
+            margin-bottom: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h1 {
+            font-size: 3em;
+            color: #FF007B; /* Couleur personnalisée pour les nombres */
+            margin: 0;
+        }
+
+        .stat p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        /* Icônes et devise */
+        .motto {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .motto h3 {
+            margin-bottom: 20px;
+        }
+
+        .motto-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Espacement entre les icônes */
+        }
+
+        .motto-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .motto-icon i {
+            font-size: 3em;
+            color: #FF007B; /* Couleur des icônes */
+            margin-bottom: 10px;
+        }
+
+        .motto-icon p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Animation pour l'icône de salut */
+        .motto-icon.wave i {
+            animation: wave-animation 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes wave-animation {
+            0% {
+                transform: translateX(0) rotate(0deg);
+            }
+            100% {
+                transform: translateX(20px) rotate(0deg);
+            }
+        }
+
+        /* Animation pour l'icône de battement de cœur */
+        .motto-icon.heartbeat i {
+            animation: heartbeat-animation 1s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat-animation {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1px;
+            background-color: #2d2d2d;
+            color: white;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu à droite -->
+    <nav>
+        <div>
+            <a href="/"><img src="{% static 'image2.png' %}" alt="Logo Rotaract" class="logo"></a>
+        </div>
+    
+        <!-- Menu à droite -->
+        <ul class="menu">
+            <li>
+                <a href="/">Accueil <i class=""></i></a>
+            </li>
+            <li><a href="{% url 'NosClubs' %}">Nos Clubs</a></li>
+            <li>
+                <a href="#">Le Rotaract Maroc <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="{% url 'presentation' %}">Présentation</a></li>
+                    <li><a href="{% url 'liste_evenements' %}">Événements</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Nous rejoindre <i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="{% url 'equipe' %}">Notre équipe</a></li>  <!-- Lien vers l'interface équipe -->
+                    <li><a href="{% url 'devenir_membre' %}">Devenir Membre</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-image active" style="background-image: url('{% static 'image9.jpeg.jpg' %}');"></div>
+        <div class="hero-image " style="background-image: url('{% static 'image1.png' %}');"></div>
+        <div class="hero-image" style="background-image: url('{% static 'image4.png.jpg' %}');"></div>
+        <div class="hero-image" style="background-image: url('{% static 'image6.jpeg' %}');"></div>
+        <div class="hero-image" style="background-image: url('{% static 'image7.jpeg' %}');"></div>
+        <div class="hero-image" style="background-image: url('{% static 'image8.jpeg.jpg' %}');"></div>
+        <div class="hero-text"></div>
+    </section>
+
+    <!-- Présentation du Rotaract -->
+    <section class="presentation">
+        <h2><i class="fas fa-globe" style="color: #FF007B; margin-right: 10px;"></i> En quoi consiste le Rotaract ?</h2>
+        <p>Le Rotaract est un programme du Rotary International qui réunit des jeunes adultes afin de développer 
+            leur leadership et leurs compétences professionnelles. Les clubs Rotaract organisent des projets de service communautaire et international, favorisent l'amitié et encouragent les opportunités professionnelles.</p>
+    </section>
+    
+    <!-- Rotaract dans le Monde -->
+    <section class="rotaract-world">
+        <h2>Le Rotaract dans le Monde</h2>
+        <div class="content-container">
+            <div class="image-container">
+                <img src="{% static 'world.jpg' %}" alt="Image représentant le Rotaract">
+            </div>
+            <div class="statistics">
+                <div class="stats-container">
+                    <div class="stat">
+                        <h1 id="clubs" class="counter">0</h1>
+                        <p>Clubs</p>
+                    </div>
+                    <div class="stat">
+                        <h1 id="rotaractiens" class="counter">0</h1>
+                        <p>Rotaractiens</p>
+                    </div>
+                    <div class="stat">
+                        <h1 id="pays" class="counter">0</h1>
+                        <p>Pays</p>
+                    </div>
+                </div>
+                <div class="motto">
+                    <h3>UNE DEVISE</h3>
+                    <div class="motto-icons">
+                        <div class="motto-icon wave">
+                            <i class="fas fa-hands-helping"></i>
+                            <p>L'AMITIÉ...</p>
+                        </div>
+                        <div class="motto-icon heartbeat">
+                            <i class="fas fa-heart"></i>
+                            <p>...PAR LE SERVICE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Rotaract SALE BAB LAMRISSA. Tous droits réservés par <i style=" color: #4a9eec ">EL KHYARI Ilyas</i>.
+    </footer>
+
+    <script>
+        // Variables pour l'animation du compteur
+        let animationDone = false;
+
+        // Fonction pour animer le compteur
+        function animateCounter(elementId, start, end, duration) {
+            const element = document.getElementById(elementId);
+            let current = start;
+            const increment = end / (duration / 20); // Ajuste l'incrément selon la durée
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 10);
+        }
+
+        // Vérifie si un élément est visible dans la fenêtre
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Fonction pour déclencher l'animation si les compteurs sont visibles
+        function checkCounterAnimation() {
+            const counters = document.querySelectorAll('.counter');
+            if (!animationDone && Array.from(counters).every(isElementInViewport)) {
+                animationDone = true; // Empêche les animations de se répéter
+                animateCounter('clubs', 0, 10900, 4000); // Animer jusqu'à 10900
+                animateCounter('rotaractiens', 0, 210000, 4000); // Animer jusqu'à 210000
+                animateCounter('pays', 0, 189, 4000); // Animer jusqu'à 189
+            }
+        }
+
+        // Appeler la fonction lors du défilement
+        window.addEventListener('scroll', checkCounterAnimation);
+
+        // JavaScript pour le diaporama
+        const images = document.querySelectorAll('.hero-image');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 2500); // Change d'image toutes les 2,5 secondes
+    </script>
+    
+    
+</body>
+</html>

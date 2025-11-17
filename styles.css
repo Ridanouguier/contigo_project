@@ -1,0 +1,824 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    color: #383637;
+    background-color: #f9f9f9;
+}
+
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: #ffffff;
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.logo img{
+    height: 50px;
+    width: auto;
+}
+
+.navigacion .nav-links{
+    display: flex;
+    list-style: none;
+}
+
+.navigacion .nav-links a{
+    text-decoration: none;
+    color: #383638;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: background-color 0.3s ease, transform 0.2 ease;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    -webkit-border-radius: background-color 0.3s ease, transform 0.2 ease;
+    -moz-border-radius: background-color 0.3s ease, transform 0.2 ease;
+    -ms-border-radius: background-color 0.3s ease, transform 0.2 ease;
+    -o-border-radius: background-color 0.3s ease, transform 0.2 ease;
+}
+
+.navigacion .nav-links a:hover{
+    color: #3786c4;
+}
+
+.navigacion .nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3786c4;
+    transition: .3s;
+    bottom: 0;
+    display: block;
+}
+
+.navigacion .nav-links a:hover::before {
+    width: 100%;
+}
+/* From Uiverse.io by andrew-demchenk0 */ 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+    height: auto;
+    width: auto;
+    border: none;
+    background: #3786c4;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background .3s;
+    -webkit-transition: background .3s;
+    -moz-transition: background .3s;
+    -ms-transition: background .3s;
+    -o-transition: background .3s;
+}
+
+.lable {
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background: #82b3da;
+}
+
+.button:hover .svg-icon {
+    animation: slope 1s linear infinite;
+}
+
+@keyframes slope {
+    0% {
+    }
+
+    50% {
+    transform: rotate(10deg);
+    }
+
+    100% {
+    }
+}
+
+.cita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigacion.active .nav-links{
+    display: flex;
+    flex-direction: column;
+    background-color: #3786c4;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+.navigacion .nav-links li{
+    margin: 0 1rem;
+}
+
+section {
+    padding: 100px 200px;
+}
+
+.intro {
+position: relative;
+text-align: center;
+padding: 50px;
+background-color: #f9f9f9;
+margin-top: 70px;
+min-height: 100vh;
+display: flex;
+align-items: center;
+background: url(img/background\ \(2\).png) no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+
+.intro-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.intro-text {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.intro-text h1 {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.intro-text h1 span {
+    color: #3786c4;
+    font-weight: 900;
+}
+
+.intro .intro-des {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* From Uiverse.io by 0x-Sarthak */ 
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 11.5px 18px;
+    transition: all 0.2s ease;
+    border: 3px solid #3786c4;
+    border-radius: 50px;
+    background: #3786c4;
+    cursor: pointer;
+  }
+  
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    border-radius: 50px;
+    background: white;
+    width: 45px;
+    height: 45px;
+    transition: all 0.8s ease;
+  }
+  
+  .cta span {
+    position: relative;
+    font-family: Montserrat;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: white;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+  
+  .cta:hover:before {
+    width: 100%;
+    background: #82b3da;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+    transition: all 2s ease;
+  }
+  
+  .cta:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+  .cta:active {
+    transform: scale(0.95);
+    transition: all 2s ease;
+  }
+  
+
+/* Estilos para las banderas */
+.flag-left,
+.flag-right {
+    position: absolute;
+    top: -10%;
+    /*Fueradelavistainicial*/width: 5%;
+    height: auto;
+    
+    animation: slideDown 1.5s ease-out forwards;
+    -webkit-animation: slideDown 1.5s ease-out forwards;
+    z-index: 10;
+}
+
+.flag-left {
+    left: 10%;
+    animation-delay: 0.5s;
+}
+
+.flag-right {
+    right: 10%;
+    animation-delay: 1s;
+}
+
+/* Animación de las banderas */
+@keyframes slideDown {
+from {
+top: -100px;
+    }
+to {
+top: 20px; /* Ajusta según tu diseño */
+    }
+}
+
+/* From Uiverse.io by elisapi */ 
+.card {
+width: fit-content;
+height: fit-content;
+background-color: transparent;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 15px;
+gap: 20px;
+}
+
+/* for all social containers*/
+.socialContainer {
+width: 52px;
+height: 52px;
+background-color: rgb(65, 29, 131);
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+transition-duration: 0.3s;
+border-radius: 30px;
+}
+/* instagram*/
+.containerOne:hover {
+background-color: #d62976;
+transition-duration: 0.3s;
+transform: scale(1.2);
+}
+/* twitter*/
+.containerTwo:hover {
+background-color: #00acee;
+transition-duration: 0.3s;
+transform: scale(1.2);
+}
+/* linkdin*/
+.containerThree:hover {
+background-color: #0072b1;
+transition-duration: 0.3s;
+transform: scale(1.2);
+}
+/* Whatsapp*/
+.containerFour:hover {
+background-color: #128c7e;
+transition-duration: 0.3s;
+transform: scale(1.2);
+}
+
+.socialContainer:active {
+transform: scale(0.9);
+transition-duration: 0.3s;
+}
+
+.socialSvg {
+width: 17px;
+}
+
+.socialSvg path {
+fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+0% {
+transform: translateY(-50px);
+opacity: 0;
+}
+
+100% {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+/* From Uiverse.io by Smit-Prajapati */ 
+.card {
+width: 280px;
+height: 280px;
+background: white;
+border-radius: 32px;
+padding: 3px;
+position: relative;
+box-shadow: #604b4a30 0px 70px 30px -50px;
+transition: all 0.5s ease-in-out;
+}
+
+.card .mail {
+position: absolute;
+right: 2rem;
+top: 1.4rem;
+background: transparent;
+border: none;
+}
+
+.card .mail svg {
+stroke: #3786c4;
+stroke-width: 3px;
+}
+
+.card .mail svg:hover {
+stroke: #82b3da;
+}
+
+.card .profile-pic {
+position: absolute;
+width: calc(100% - 6px);
+height: calc(100% - 6px);
+top: 3px;
+left: 3px;
+border-radius: 29px;
+z-index: 1;
+border: 0px solid #82b3da;
+overflow: hidden;
+transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
+}
+
+.card .profile-pic img {
+-o-object-fit: cover;
+object-fit: cover;
+width: 100%;
+height: 100%;
+-o-object-position: 0px 0px;
+object-position: 0px 0px;
+transition: all 0.5s ease-in-out 0s;
+}
+
+.card .profile-pic svg {
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+object-fit: cover;
+-o-object-position: 0px 0px;
+object-position: 0px 0px;
+transform-origin: 45% 20%;
+}
+
+.card .bottom {
+position: absolute;
+bottom: 3px;
+left: 3px;
+right: 3px;
+background: #82b3da;
+top: 80%;
+border-radius: 29px;
+z-index: 2;
+box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px inset;
+overflow: hidden;
+transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.card .bottom .content {
+position: absolute;
+bottom: 0;
+left: 1.5rem;
+right: 1.5rem;
+height: 160px;
+}
+
+.card .bottom .content .name {
+display: block;
+font-size: 1.2rem;
+color: white;
+font-weight: bold;
+}
+
+.card .bottom .content .about-me {
+display: block;
+font-size: 0.9rem;
+color: white;
+margin-top: 1rem;
+}
+
+.card .bottom .bottom-bottom {
+position: absolute;
+bottom: 1rem;
+left: 1.5rem;
+right: 1.5rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.card .bottom .bottom-bottom .social-links-container {
+display: flex;
+gap: 1rem;
+}
+
+.card .bottom .bottom-bottom .social-links-container svg {
+height: 20px;
+fill: white;
+filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
+}
+
+.card .bottom .bottom-bottom .social-links-container svg:hover {
+fill: #3786c4;
+transform: scale(1.2);
+}
+
+.card .bottom .bottom-bottom .button {
+background: white;
+color: #3786c4;
+border: none;
+border-radius: 20px;
+font-size: 0.6rem;
+padding: 0.4rem 0.6rem;
+box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
+}
+
+.card .bottom .bottom-bottom .button:hover {
+background: #3786c4;
+color: white;
+}
+
+.card:hover {
+border-top-left-radius: 55px;
+}
+
+.card:hover .bottom {
+top: 20%;
+border-radius: 80px 29px 29px 29px;
+transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+}
+
+.card:hover .profile-pic {
+width: 100px;
+height: 100px;
+aspect-ratio: 1;
+top: 10px;
+left: 10px;
+border-radius: 50%;
+z-index: 3;
+border: 7px solid #3786c4;
+box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
+transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+}
+
+.card:hover .profile-pic:hover {
+transform: scale(1.3);
+border-radius: 0px;
+}
+
+.card:hover .profile-pic img {
+transform: scale(2.5);
+-o-object-position: 0px 25px;
+object-position: 0px 25px;
+transition: all 0.5s ease-in-out 0.5s;
+}
+
+.card:hover .profile-pic svg {
+transform: scale(2.5);
+transition: all 0.5s ease-in-out 0.5s;
+}
+
+/* From Uiverse.io by david-mohseni */ 
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    padding-top: 40px;
+    font-family: "Poppins", sans-serif;
+    justify-content: center;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background: #FF0000; /* Rojo de YouTube */
+    color: #fff; /* Color del ícono y texto */
+  }
+  
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
+
+ /*Servicios*/
+ .title {
+    display: flex;
+    justify-content: center;
+    color: #3786c4;
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: left;
+ }
+
+ .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 15px;
+ }
+
+ .tarjeta {
+    background-color: #f9f9f9;
+    width: 16em;
+    box-shadow: 0 5px 25px rgba(1, 1, 1, 0.15);
+    border-radius: 10px;
+    padding: 25px;
+    margin: 15px;
+    transition: 0.7s;
+}
+
+.tarjeta:hover {
+    transform: scale(1.1);
+}
+
+
+.info {
+    text-align: center;
+}
+
+.info h3 {
+    color: #3786c4;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.ico {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ico img {
+    width: 170px; /* Tamaño del icono */
+    height: 170px;
+    margin-bottom: 10px;
+  }
+
+  /* Clientes*/
+  .stats-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente las estadísticas */
+    gap: 30px; /* Espaciado entre las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas bajen de línea si el espacio es limitado */
+  }
+  
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    padding: 20px; /* Espaciado interno */
+    width: 180px; /* Ancho fijo similar a las tarjetas superiores */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación para hover */
+  }
+  
+  .stat:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  }
+  
+  .img-stat img {
+    width: 60px; /* Ajusta el tamaño del ícono */
+    height: 60px;
+    margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+  }
+  
+  .counter {
+    font-size: 24px; /* Tamaño del número */
+    font-weight: bold;
+    color: #333; /* Color del texto */
+    margin: 5px 0;
+  }
+  
+  .stat p {
+    font-size: 14px; /* Tamaño del texto descriptivo */
+    color: #666; /* Color gris para el texto */
+  }
+  
+  
+  .footer {
+    background: linear-gradient(to bottom, #f9f9f9, #82b3da);
+    color: #383637;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+}
+.footer-section h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #3786c4;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin: 5px 0;
+}
+.footer-section ul li a {
+    color: #383637;
+    text-decoration: none;
+}
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+.footer-section p {
+    margin: 0;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+}
+.footer-bottom a {
+    color: #3786c4;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover{
+  color: #3786c4;
+}
+@media (max-width:1023px) {
+  header{
+    padding: 12px 20px;
+  }
+
+  .navigacion{
+    padding-left: 10px;
+  }
+
+  .title{
+    font-size: 1.8em;
+  }
+
+  section{
+    padding: 80px 20px;
+  }
+
+  
+}
