@@ -262,38 +262,98 @@ background-attachment: fixed;
     transform: scale(0.95);
     transition: all 2s ease;
   }
-  
+/*flip-container*/
+.flip-container {
+    display: inline-block;
+    height: 40px;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.flip {
+  display: inline-block;
+    height: 40px;
+    overflow: hidden;
+}
+
+.flip > div > div {
+    padding: 0 6px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #2653D1;
+    display: inline-block;
+}
+
+/* Animación */
+.flip > div:first-child {
+    animation: flipWords 4s ease-in-out infinite;
+}
+
+@keyframes flipWords {
+    0%, 40% {
+        margin-top: 0px; /* "confiance" visible */
+    }
+    45%, 60% {
+        margin-top: -40px; /* transición a "clarté" */
+    }
+    65%, 100% {
+        margin-top: -40px; /* "clarté" visible */
+    }
+}
+
 
 /* Estilos para las banderas */
 .flag-left,
 .flag-right {
     position: absolute;
-    top: -10%;
-    /*Fueradelavistainicial*/width: 5%;
-    height: auto;
-    
-    animation: slideDown 1.5s ease-out forwards;
-    -webkit-animation: slideDown 1.5s ease-out forwards;
+    top: -20%;
     z-index: 10;
 }
 
 .flag-left {
     left: 10%;
-    animation-delay: 0.5s;
 }
 
 .flag-right {
     right: 10%;
-    animation-delay: 1s;
 }
 
-/* Animación de las banderas */
-@keyframes slideDown {
-from {
-top: -100px;
+/* La animación va aquí, en la IMAGEN */
+.flag {
+    width: 60px;
+    height: auto;
+    opacity: 0;
+    transform-origin: top center;
+    animation: flagDrop 2s ease-out forwards;
+}
+
+/* Retrasos independientes */
+.flag-left .flag {
+    animation-delay: 0.3s;
+}
+
+.flag-right .flag {
+    animation-delay: 0.6s;
+}
+
+/* Animación */
+@keyframes flagDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px) scaleY(0.1);
     }
-to {
-top: 20px; /* Ajusta según tu diseño */
+    40% {
+        opacity: 1;
+        transform: translateY(0px) scaleY(0.3);
+    }
+    70% {
+        transform: scaleY(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1);
     }
 }
 
