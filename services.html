@@ -33,7 +33,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: radial-gradient(ellipse at top, #0f1535, #0a0e27);
+            background: radial-gradient(ellipse at top, #3786C4, #2E70A3);
         }
 
         .gradient-orb {
@@ -82,7 +82,7 @@
 
         /* Header */
         .main-header {
-            background: rgba(10, 14, 39, 0.85);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(30px) saturate(180%);
             padding: 1.5rem 5%;
             display: flex;
@@ -115,7 +115,7 @@
         }
 
         .nav-links a {
-            color: #f9f9f9;
+            color: #000000;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.85rem;
@@ -173,9 +173,83 @@
             box-shadow: 0 10px 40px rgba(55, 134, 196, 0.8);
         }
 
+        /* From Uiverse.io by andrew-demchenk0 */ 
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            gap: 10px;
+            height: auto;
+            width: auto;
+            border: none;
+            background: #3786c4;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background .3s;
+            -webkit-transition: background .3s;
+            -moz-transition: background .3s;
+            -ms-transition: background .3s;
+            -o-transition: background .3s;
+        }
+
+        .lable {
+            line-height: 22px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .button:hover {
+            background: #82b3da;
+        }
+
+        .button:hover .svg-icon {
+            animation: slope 1s linear infinite;
+        }
+
+        @keyframes slope {
+            0% {
+            }
+
+            50% {
+            transform: rotate(10deg);
+            }
+
+            100% {
+            }
+        }
+
+        .cita {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigacion.active .nav-links{
+            display: flex;
+            flex-direction: column;
+            background-color: #3786c4;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .navigacion .nav-links li{
+            margin: 0 1rem;
+        }
+
+        section {
+            padding: 100px 200px;
+        }
+
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #1a2456 0%, #0f1535 50%, #0a0e27 100%);
+            background: linear-gradient(135deg, #24587F 0%, #2E70A3 50%, #24587F 100%);
             color: white;
             padding: 12rem 5% 8rem;
             text-align: center;
@@ -452,7 +526,7 @@
 
         /* Reassurance Box */
         .reassurance-box {
-            background: linear-gradient(135deg, #1a2456, #0f1535);
+            background: linear-gradient(135deg, #3786c4, #82b3da);
             padding: 3rem;
             border-radius: 30px;
             border: 2px solid rgba(130, 179, 218, 0.3);
@@ -552,7 +626,7 @@
 
         /* Premium Card Highlight */
         .premium-card {
-            background: linear-gradient(135deg, #1a2456, #0f1535);
+            background: linear-gradient(135deg, #3786C4, #102638);
             border: 2px solid #82b3da;
             box-shadow: 0 30px 90px rgba(130, 179, 218, 0.5);
             position: relative;
@@ -599,7 +673,7 @@
 
         /* Footer - Premium Design */
         .footer {
-            background: linear-gradient(135deg, #0a0e27 0%, #0f1535 50%, #1a1a2e 100%);
+            background: radial-gradient(circle at 0% 0%, #EBF3F9 0%, #3786C4 25%, #102638 100%);
             color: white;
             padding: 6rem 5% 0;
             margin-top: 8rem;
@@ -816,6 +890,7 @@
             align-items: center;
             gap: 0.8rem;
             margin-bottom: 1rem;
+            white-space: nowrap;
         }
 
         .footer-info-icon {
@@ -831,7 +906,7 @@
         }
 
         .footer-bottom {
-            background: rgba(10, 14, 39, 0.5);
+            background: transparent;
             backdrop-filter: blur(20px);
             padding: 2rem 0;
             border-top: 1px solid rgba(130, 179, 218, 0.15);
@@ -1027,7 +1102,7 @@
 
     <header class="main-header">
         <div class="logo">
-            <a href="#">
+            <a href="index.html">
                 <img src="img/Contigo transparent-02.png" alt="Logo-Contigo">
             </a>
         </div>
@@ -1317,7 +1392,7 @@
             </p>
             <a href="#contact" class="cta-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <g stroke-linecap="round">
+                    <g stroke-linecap="r ound">
                         <rect y="5" x="4" width="16" rx="2" height="16"></rect>
                         <path d="m8 3v4"></path>
                         <path d="m16 3v4"></path>
@@ -1400,7 +1475,7 @@
                     <div class="footer-info">
                         <div class="footer-info-item">
                             <div class="footer-info-icon">📧</div>
-                            <a href="mailto:contact@contigosiempre.com">contact@contigosiempre.com</a>
+                            <a href="mailto:contact@contigo-siempre.com">contact@contigo-siempre.com</a>
                         </div>
                         <div class="footer-info-item">
                             <div class="footer-info-icon">💬</div>
@@ -1571,8 +1646,8 @@
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                const rotateX = (y - centerY) / 150;
-                const rotateY = (centerX - x) / 150;
+                const rotateX = (y - centerY) / 300;
+                const rotateY = (centerX - x) / 300;
                 
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
             });

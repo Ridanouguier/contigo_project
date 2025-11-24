@@ -7,26 +7,31 @@
     <title>Contigo Siempre</title>
 </head>
 <body>
-    <!-- Header-->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="particles-bg" id="particlesBg"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+
     <header class="main-header">
         <div class="logo">
-            <a href="#">
-                <img src="img\Contigo transparent-02.png" alt="Logo-Contigo">
+            <a href="index.html">
+                <img src="img/Contigo transparent-02.png" alt="Logo-Contigo">
             </a>
         </div>
         <nav class="navigacion">
             <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="about.html">À propos</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact">Contact</a></li>
                 <li><a href="#legal">Mentions légales</a></li>
             </ul>
         </nav>
         <div class="cita">
-
             <button class="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none" class="svg-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" height="20" fill="none" class="svg-icon">
                     <g stroke-width="2" stroke-linecap="round" stroke="#fff">
                         <rect y="5" x="4" width="16" rx="2" height="16"></rect>
                         <path d="m8 3v4"></path>
@@ -37,8 +42,13 @@
                 <span class="lable">Rendez-vous</span>
             </button>
         </div>
+        <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
-
+    
         <!--Bienvenida centenido-->
         <section class="intro">
             <div class="intro-content">
@@ -678,33 +688,123 @@
            </div>
         </div>
     </div>
+
+    
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3><i class="icon-shop"></i> MENU</h3>
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="img/Contigo transparent-02.png" alt="Logo-Contigo">
+                    </div>
+                    <p class="footer-tagline">
+                        Ton partenaire de confiance pour réussir ton projet d'études en Espagne. 
+                        Accompagnement personnalisé de A à Z.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@Conkhaoula" target="_blank" class="social-icon" title="YouTube">
+                            ▶️
+                        </a>
+                        <a href="#" class="social-icon" title="Facebook">
+                            📘
+                        </a>
+                        <a href="#" class="social-icon" title="Instagram">
+                            📸
+                        </a>
+                        <a href="#" class="social-icon" title="TikTok">
+                            🎵
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-cta">
+                    <h3>🚀 Prêt à démarrer ?</h3>
+                    <p>Réserve ton rendez-vous gratuit et commençons ensemble ton aventure espagnole !</p>
+                    <a href="#contact" class="footer-cta-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <g stroke-linecap="round">
+                                <rect y="5" x="4" width="16" rx="2" height="16"></rect>
+                                <path d="m8 3v4"></path>
+                                <path d="m16 3v4"></path>
+                                <path d="m4 11h16"></path>
+                            </g>
+                        </svg>
+                        Rendez-vous Gratuit
+                    </a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3><i class="icon-share"></i> Nos redes</h3>
-                <ul>
-                    <li><i class="icon-youtube"></i> <a href="https://www.youtube.com/@Conkhaoula" target="_blank">Youtube</a></li>
-                    <li><i class="icon-facebook"></i> <a href="#">Facebook</a></li>
-                    <li><i class="icon-instagram"></i> <a href="#">Instagram</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3><i class="icon-contact"></i> CONTACT</h3>
-                <p>contact@contigosiempre.com</p>
+
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>📋 Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="services.html">Nos Services</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="#legal">Mentions légales</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>🎓 Services</h3>
+                    <ul>
+                        <li><a href="#visa">Visa Étudiant</a></li>
+                        <li><a href="#orientation">Orientation Formation</a></li>
+                        <li><a href="#premium">Accompagnement Premium</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>📞 Contact</h3>
+                    <div class="footer-info">
+                        <div class="footer-info-item">
+                            <div class="footer-info-icon">📧</div>
+                            <a href="mailto:contact@contigo-siempre.com">contact@contigo-siempre.com</a>
+                        </div>
+                        <div class="footer-info-item">
+                            <div class="footer-info-icon">💬</div>
+                            <span>WhatsApp: +34 XXX XXX XXX</span>
+                        </div>
+                        <div class="footer-info-item">
+                            <div class="footer-info-icon">📍</div>
+                            <span>Espagne</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>⏰ Horaires</h3>
+                    <div class="footer-info">
+                        <p><strong>Lundi - Vendredi</strong><br>9h00 - 18h00</p>
+                        <p style="margin-top: 1rem;"><strong>Samedi</strong><br>10h00 - 14h00</p>
+                        <p style="margin-top: 1rem;"><strong>Dimanche</strong><br>Fermé</p>
+                    </div>
+                </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            Desarrollado por <a href="#">Rida Nouguier</a>
+            <div class="footer-bottom-content">
+                <div class="footer-copyright">
+                    © 2025 Contigo Siempre. Tous droits réservés. 
+                    Développé avec ❤️ par <a href="#">Rida Nouguier</a>
+                </div>
+                <div class="footer-links">
+                    <a href="#privacy">Politique de confidentialité</a>
+                    <a href="#terms">Conditions d'utilisation</a>
+                    <a href="#cookies">Cookies</a>
+                </div>
+                <div class="back-to-top" onclick="scrollToTop()" title="Retour en haut">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
         </div>
     </footer>
+
 
     <script>
         // Variables para la animación del contador

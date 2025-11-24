@@ -34,7 +34,7 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            background: radial-gradient(ellipse at top, #0f1535, #0a0e27);
+            background: radial-gradient(ellipse at top, #3786C4, #2E70A3);
         }
 
         .particle {
@@ -221,9 +221,83 @@
             z-index: 1;
         }
 
+        /* From Uiverse.io by andrew-demchenk0 */ 
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+    height: auto;
+    width: auto;
+    border: none;
+    background: #3786c4;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background .3s;
+    -webkit-transition: background .3s;
+    -moz-transition: background .3s;
+    -ms-transition: background .3s;
+    -o-transition: background .3s;
+}
+
+.lable {
+    line-height: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background: #82b3da;
+}
+
+.button:hover .svg-icon {
+    animation: slope 1s linear infinite;
+}
+
+@keyframes slope {
+    0% {
+    }
+
+    50% {
+    transform: rotate(10deg);
+    }
+
+    100% {
+    }
+}
+
+.cita {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigacion.active .nav-links{
+    display: flex;
+    flex-direction: column;
+    background-color: #3786c4;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+}
+
+.navigacion .nav-links li{
+    margin: 0 1rem;
+}
+
+section {
+    padding: 100px 200px;
+}
+
         /* Hero Section with 3D Effect */
         .hero-section {
-            background: linear-gradient(135deg, #1a2456 0%, #0f1535 50%, #0a0e27 100%);
+            background: linear-gradient(135deg, #24587F 0%, #2E70A3 50%, #24587F 100%);
             color: white;
             padding: 12rem 5% 8rem;
             text-align: center;
@@ -339,7 +413,7 @@
 
         /* Who Section - Neumorphism + Glassmorphism */
         .who-section {
-            background: rgba(15, 21, 53, 0.6);
+            background: #2E70A3;
             backdrop-filter: blur(40px) saturate(180%);
             padding: 4rem;
             border-radius: 40px;
@@ -389,7 +463,7 @@
         }
 
         .who-section h2 {
-            color: #82b3da;
+            color: #C7DEEF;
             font-size: 3rem;
             margin-bottom: 2.5rem;
             display: flex;
@@ -457,7 +531,7 @@
         }
 
         .vmv-card {
-            background: rgba(15, 21, 53, 0.6);
+            background: #2E70A3;
             backdrop-filter: blur(40px) saturate(180%);
             padding: 3.5rem;
             border-radius: 40px;
@@ -598,7 +672,7 @@
 
         /* CTA Section - Premium Design */
         .cta-section {
-            background: linear-gradient(135deg, #1a2456 0%, #0f1535 100%);
+            background: linear-gradient(135deg, #24587F 0%, #2E70A3 50%, #24587F 100%);
             color: white;
             padding: 5rem 4rem;
             border-radius: 40px;
@@ -702,7 +776,7 @@
 
         /* Footer - Premium Design */
         .footer {
-            background: linear-gradient(135deg, #0a0e27 0%, #0f1535 50%, #1a1a2e 100%);
+            background: radial-gradient(circle at 0% 0%, #EBF3F9 0%, #3786C4 25%, #102638 100%);
             color: white;
             padding: 6rem 5% 0;
             margin-top: 8rem;
@@ -919,6 +993,7 @@
             align-items: center;
             gap: 0.8rem;
             margin-bottom: 1rem;
+            white-space: nowrap;
         }
 
         .footer-info-icon {
@@ -934,7 +1009,7 @@
         }
 
         .footer-bottom {
-            background: rgba(10, 14, 39, 0.5);
+            background: transparent;
             backdrop-filter: blur(20px);
             padding: 2rem 0;
             border-top: 1px solid rgba(130, 179, 218, 0.15);
@@ -1010,6 +1085,28 @@
             stroke-width: 3;
         }
 
+        /* Responsive Footer */
+        @media (max-width: 968px) {
+            .footer-top {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .footer-brand,
+            .footer-cta {
+                max-width: 100%;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
 
         /* Mobile Menu */
         .menu-toggle {
@@ -1169,7 +1266,7 @@
 
     <header class="main-header">
         <div class="logo">
-            <a href="#">
+            <a href="index.html">
                 <img src="img/Contigo transparent-02.png" alt="Logo-Contigo">
             </a>
         </div>
@@ -1326,7 +1423,7 @@
                     <div class="footer-info">
                         <div class="footer-info-item">
                             <div class="footer-info-icon">📧</div>
-                            <a href="mailto:contact@contigosiempre.com">contact@contigosiempre.com</a>
+                            <a href="mailto:contact@contigo-siempre.com">contact@contigo-siempre.com</a>
                         </div>
                         <div class="footer-info-item">
                             <div class="footer-info-icon">💬</div>
@@ -1369,6 +1466,7 @@
             </div>
         </div>
     </footer>
+
 
     <script>
         // Menu Toggle
@@ -1469,8 +1567,8 @@
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
                 
-                const rotateX = (y - centerY) / 20;
-                const rotateY = (centerX - x) / 20;
+                const rotateX = (y - centerY) / 100;
+                const rotateY = (centerX - x) / 100;
                 
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
             });
@@ -1478,26 +1576,6 @@
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
             });
-        });
-
-        // Scroll to Top Function
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Show/Hide Back to Top Button
-        window.addEventListener('scroll', () => {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.pageYOffset > 500) {
-                backToTop.style.opacity = '1';
-                backToTop.style.pointerEvents = 'auto';
-            } else {
-                backToTop.style.opacity = '0';
-                backToTop.style.pointerEvents = 'none';
-            }
         });
     </script>
 </body>
